@@ -25,7 +25,7 @@ echo "build: Build version suffix is $buildSuffix"
 exec { & dotnet build DapperComDommel.sln -c Release --version-suffix=$buildSuffix /p:CI=true }
 
 echo "build: Executing tests"
-Push-Location -Path .\tests\TesteUnidade
+Push-Location -Path .\tests\TesteUnitario
 exec { & dotnet test -c Release --no-build }
 Pop-Location
 Push-Location -Path .\tests\TesteIntegrado
