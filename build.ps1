@@ -11,7 +11,7 @@ function Exec
     }
 }
 
-if(Test-Path .\src\Dommel\artifacts) { Remove-Item .\src\Dommel\artifacts -Force -Recurse }
+if(Test-Path .\artifacts) { Remove-Item .\artifacts -Force -Recurse }
 
 exec { & dotnet restore }
 
@@ -22,13 +22,13 @@ $commitHash = $(git rev-parse --short HEAD)
 $buildSuffix = @{ $true = "$($suffix)-$($commitHash)"; $false = "$($branch)-$($commitHash)" }[$suffix -ne ""]
 echo "build: Build version suffix is $buildSuffix"
 
-exec { & dotnet build Dommel.sln -c Release --version-suffix=$buildSuffix /p:CI=true }
+exec { & dotnet build DapperComDommel.sln -c Release --version-suffix=$buildSuffix /p:CI=true }
 
 echo "build: Executing tests"
-Push-Location -Path .\test\Dommel.Tests
+Push-Location -Path .\tests\TesteUnidade
 exec { & dotnet test -c Release --no-build }
 Pop-Location
-Push-Location -Path .\test\Dommel.IntegrationTests
+Push-Location -Path .\tests\TesteIntegrado
 exec { & dotnet test -c Release --no-build }
 Pop-Location
 
@@ -38,6 +38,3 @@ if ($env:APPVEYOR_BUILD_NUMBER) {
 else {
     $versionSuffix = $suffix
 }
-
-echo "build: Creating NuGet package with suffix $versionSuffix"
-exec { & dotnet pack .\src\Dommel\Dommel.csproj -c Release -o .\artifacts --no-build --version-suffix=$versionSuffix }
