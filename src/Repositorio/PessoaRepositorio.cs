@@ -1,18 +1,16 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.IO;
 using System.Threading.Tasks;
+using Dominio.Entidades;
+using Dominio.Repositorio;
 using Dommel;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using Queries.Dominio.Consultas;
-using Queries.Dominio.Entidades;
-using Queries.Dominio.Repositorio;
 
-namespace Queries.Repositorio
+namespace Repositorio
 {
     public class PessoaRepositorio : IPessoaRepositorio
     {
@@ -30,9 +28,7 @@ namespace Queries.Repositorio
                 var pessoa = JsonConvert.DeserializeObject<IList<Pessoa>>(dataJson);
 
                 await this.DeleteAsync();
-
-                foreach (var item in pessoa)
-                    await db.InsertAsync(item);
+                await db.InsertAllAsync(pessoa);
             }
         }
 

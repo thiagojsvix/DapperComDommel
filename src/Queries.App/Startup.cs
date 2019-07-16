@@ -1,12 +1,12 @@
-﻿using Dommel;
+﻿using Dominio.Repositorio;
+using Dommel;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Queries.App.Extesion;
-using Queries.Dominio.Repositorio;
-using Queries.Repositorio;
+using Repositorio;
 
 namespace Queries.App
 {

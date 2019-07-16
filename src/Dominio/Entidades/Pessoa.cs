@@ -1,5 +1,5 @@
 ﻿
-namespace Queries.Dominio.Entidades
+namespace Dominio.Entidades
 {
     public class Pessoa
     {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq.Expressions;
-using Queries.Dominio.Entidades;
+using Dominio.Entidades;
 
-namespace Queries.Dominio.Consultas
+namespace Dominio.Consultas
 {
     public static class PessoaConsulta
     {

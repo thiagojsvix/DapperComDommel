@@ -5,7 +5,7 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>Queries.Tests</AssemblyName>
+    <AssemblyName>Queries.Unitario.Tests</AssemblyName>
 
     <RootNamespace>Queries.Tests</RootNamespace>
   </PropertyGroup>
@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Pessoa.Dominio\Queries.Dominio.csproj" />
+    <ProjectReference Include="..\..\src\Dominio\Dominio.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,8 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Queries.Dominio.Entidades;
+using Dominio.Entidades;
 
-namespace Queries.Dominio.Repositorio
+namespace Dominio.Repositorio
 {
     public interface IPessoaRepositorio
     {

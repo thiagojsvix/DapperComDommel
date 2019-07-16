@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Dominio.Repositorio;
 using Microsoft.AspNetCore.Mvc;
-using Queries.Dominio.Repositorio;
 
 namespace Queries.App.Controllers
 {

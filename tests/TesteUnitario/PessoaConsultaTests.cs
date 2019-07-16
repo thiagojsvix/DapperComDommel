@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Dominio.Consultas;
+using Dominio.Entidades;
 using FluentAssertions;
 using Newtonsoft.Json;
-using Queries.Dominio.Consultas;
-using Queries.Dominio.Entidades;
 using Xunit;
 
 namespace Queries.Tests
