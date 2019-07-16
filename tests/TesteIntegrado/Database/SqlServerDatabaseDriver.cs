@@ -10,7 +10,7 @@ namespace TesteIntegrado.Database
         public override string TempDbDatabaseName => "tempdb";
         protected override DbConnection GetConnection(string databaseName)
         {
-            var connectionString = $"Server=tcp:127.0.0.1,1433;Database={databaseName};User Id=sa;Password=1234567aA;";
+            var connectionString = $"Server=tcp:127.0.0.1,1433;Database={databaseName};User Id=sa;Password=Password12!;";
             return new SqlConnection(connectionString);
         }
 
