@@ -1,24 +1,25 @@
-![Middleware](~/../Content/Velocity.jpg)
+![Logo](https://github.com/thiagojsvix/Queries/blob/master/content/velocity.jpg)
+
 # Dapper - Acesse seu Banco de Dados com mais velocidade
-No desenvolvimento de Software é comum termos que fazer acesso a `Banco de Dados - BD`, porém quando temos que fazer esse tipo de acesso começamos a encontrar alguns problemas. A maioria dos `BDs` utilizados em aplicação [LoB](https://en.wikipedia.org/wiki/Line_of_business) hoje em dia, são relacionais, e como podemos fazer a traduzação de um ambiente relacional para um estrutural? a Resposta é: Frameworks [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping).
+No desenvolvimento de Software Ã© comum termos que fazer acesso a `Banco de Dados - BD`, porÃ©m quando temos que fazer esse tipo de acesso comeÃ§amos a encontrar alguns problemas. A maioria dos `BDs` utilizados em aplicaÃ§Ã£o [LoB](https://en.wikipedia.org/wiki/Line_of_business) hoje em dia, sÃ£o relacionais, e como podemos fazer a traduzaÃ§Ã£o de um ambiente relacional para um estrutural? a Resposta Ã©: Frameworks [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping).
 
-Na plataforma .Net temos com `ORMs` mais populares o [Entity Framework](https://docs.microsoft.com/en-us/ef/core/) e [NHibernate](https://nhibernate.info/doc/nh/en/index.html) embora funcione muito bem para solucionar o problema que sem propoem a resolver, em alguns cenários podem não ter uma perfomance muito boa e ser uma ferramenta muito complexa para resolver um pequeno problema.
+Na plataforma .Net temos com `ORMs` mais populares o [Entity Framework](https://docs.microsoft.com/en-us/ef/core/) e [NHibernate](https://nhibernate.info/doc/nh/en/index.html) embora funcione muito bem para solucionar o problema que sem propoem a resolver, em alguns cenÃ¡rios podem nÃ£o ter uma perfomance muito boa e ser uma ferramenta muito complexa para resolver um pequeno problema.
 
-Imagine uma aplicação na qual você está utilizando o [Pattern CQRS](https://martinfowler.com/bliki/CQRS.html), e precisa criar mais uma consulta para entregar a sua API ou para servir uma necessidade do seu negócio. Porém o seu CTO recomendou que você faça essa consulta da forma mais rapida e performatica o possível.
+Imagine uma aplicaÃ§Ã£o na qual vocÃª estÃ¡ utilizando o [Pattern CQRS](https://martinfowler.com/bliki/CQRS.html), e precisa criar mais uma consulta para entregar a sua API ou para servir uma necessidade do seu negÃ³cio. PorÃ©m o seu CTO recomendou que vocÃª faÃ§a essa consulta da forma mais rapida e performatica o possÃ­vel.
 
-Nesse momento se você utiliza um ORMs como `Entity Framework` ou `NHibernate` você já sabe que tem muitas coisa para configurar até que consiga fazer essa simples consulta, sem falar que para você testar essa consulta é bem complicado, já que há a necessidade de integrar o ambiente com o `BD` para que a consulta funcione corretamente. É claro que é possível mockar o contexto do seu ORM, mas mesmo assim sabemos que dá trabalho e você não pode esquecer que o seu CTO pediu agilidade no processo. Como alternativa você deve ter pensando: vou usar o básico, ADO.NET com instruções SQL. Você até estar correto no que tange a velocidade de execução, mas será que você terá a velocidade de construção que lhe foi solicitado?
+Nesse momento se vocÃª utiliza um ORMs como `Entity Framework` ou `NHibernate` vocÃª jÃ¡ sabe que tem muitas coisa para configurar atÃ© que consiga fazer essa simples consulta, sem falar que para vocÃª testar essa consulta Ã© bem complicado, jÃ¡ que hÃ¡ a necessidade de integrar o ambiente com o `BD` para que a consulta funcione corretamente. Ã‰ claro que Ã© possÃ­vel mockar o contexto do seu ORM, mas mesmo assim sabemos que dÃ¡ trabalho e vocÃª nÃ£o pode esquecer que o seu CTO pediu agilidade no processo. Como alternativa vocÃª deve ter pensando: vou usar o bÃ¡sico, ADO.NET com instruÃ§Ãµes SQL. VocÃª atÃ© estar correto no que tange a velocidade de execuÃ§Ã£o, mas serÃ¡ que vocÃª terÃ¡ a velocidade de construÃ§Ã£o que lhe foi solicitado?
 
 ## Apresentamos o Dapper
 
-O [Micro ORM Dapper](https://github.com/StackExchange/Dapper) é uma ferramenta formidável, porém a palavra de ordem é **Micro**. Ele não se propõem a resolver todos os problemas que um ORM como o `Entity` e `NH` resolvem. A pegada dele é ter agilidade no uso e perfomance na execução. E para tal, ele fornece uma série de extensão do ADO.Net que garante a compatibilidade com diversos BDs, entre eles: Postgres, Sql Server, MySql entre outros.
+O [Micro ORM Dapper](https://github.com/StackExchange/Dapper) Ã© uma ferramenta formidÃ¡vel, porÃ©m a palavra de ordem Ã© **Micro**. Ele nÃ£o se propÃµem a resolver todos os problemas que um ORM como o `Entity` e `NH` resolvem. A pegada dele Ã© ter agilidade no uso e perfomance na execuÃ§Ã£o. E para tal, ele fornece uma sÃ©rie de extensÃ£o do ADO.Net que garante a compatibilidade com diversos BDs, entre eles: Postgres, Sql Server, MySql entre outros.
 
-Para usar o Dapper é muito simples. Primeiro você tem que instalar o pacote nuget do Dapper, criar a conexão com o seu banco de dados e Pronto. Só executar o código
+Para usar o Dapper Ã© muito simples. Primeiro vocÃª tem que instalar o pacote nuget do Dapper, criar a conexÃ£o com o seu banco de dados e Pronto. SÃ³ executar o cÃ³digo
 
 ```
 Install-Package Dapper
 ```
 
-Abaixo é apresentado um exemplo onde é executado uma consulta no banco de dados e o resultado é associado ao seu objeto .Net. Lembrando que essa é uma facilidade que você não teria utilizando acesso nativo com o ADO.Net.
+Abaixo Ã© apresentado um exemplo onde Ã© executado uma consulta no banco de dados e o resultado Ã© associado ao seu objeto .Net. Lembrando que essa Ã© uma facilidade que vocÃª nÃ£o teria utilizando acesso nativo com o ADO.Net.
 
 
 ```csharp
@@ -39,20 +40,20 @@ Assert.Equal(1,dog.Count());
 Assert.Null(dog.First().Age);
 Assert.Equal(guid, dog.First().Id);
 ```
-Um outro ponto que me chama muito a atenção é a capacidade de fazer o bind com o seu objeto .Net. Lembrando que essa é uma facilidade que você não teria utilizando acesso nativo com o ADO.Net.
+Um outro ponto que me chama muito a atenÃ§Ã£o Ã© a capacidade de fazer o bind com o seu objeto .Net. Lembrando que essa Ã© uma facilidade que vocÃª nÃ£o teria utilizando acesso nativo com o ADO.Net.
 
-Se você ainda não está convencido que esse krinha é bom, vou listar algumas das funcionalidade que ele tem:
+Se vocÃª ainda nÃ£o estÃ¡ convencido que esse krinha Ã© bom, vou listar algumas das funcionalidade que ele tem:
 
 * Mapeamento para objetos fortemente tipado
-* Mapeamento para objetos dinâmico
+* Mapeamento para objetos dinÃ¢mico
 * Executar comandos como: Select, Insert, Delete, Update entre outros
-* Te dá suporte a Listas
-* Substituição literal
+* Te dÃ¡ suporte a Listas
+* SubstituiÃ§Ã£o literal
 * Executar Multiplas Consultas
 * Manipular Stored Procedures
 
-## Nem tudo são flores, problemas das instruções SQL
-Em construção ...
+## Nem tudo sÃ£o flores, problemas das instruÃ§Ãµes SQL
+Em construÃ§Ã£o ...
 
 ## Referencia
 * [Object-relational_mapping](https://en.wikipedia.org/wiki/Object-relational_mapping)  
@@ -67,5 +68,5 @@ Em construção ...
 * Testar consultas linq
 * Criar banco de dados SQL Server
 * Realizar consultas com Micro ORM Dapper
-* Realiza integração do Dapper com o Dommel
-* Realizar Teste de Integração
+* Realiza integraÃ§Ã£o do Dapper com o Dommel
+* Realizar Teste de IntegraÃ§Ã£o
